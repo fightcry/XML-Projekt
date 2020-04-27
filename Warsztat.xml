@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='ISO-8859-2'?>
+<warsztat>
+  <pracownik plec='m' id='1'>
+    <imie>Stanisław</imie>
+    <nazwisko>Złotopolski</nazwisko>
+    <PESEL>58022102246</PESEL>
+    <wynagrodzenie waluta='zl'>4000</wynagrodzenie>
+    <stanowisko>główny mechanik</stanowisko>
+  </pracownik>
+  <pracownik plec='m' id='2'>
+    <imie> </imie>
+    <nazwisko></nazwisko>
+    <PESEL></PESEL>
+    <wynagrodzenie></wynagrodzenie>
+    <stanowisko></stanowisko>
+  </pracownik>
+  <pracownik plec='k' id='3'>
+    <imie> </imie>
+    <nazwisko></nazwisko>
+    <PESEL></PESEL>
+    <wynagrodzenie></wynagrodzenie>
+    <stanowisko></stanowisko>
+  </pracownik>
+<samochod>
+
+
+
+
+
+
+
+
+
+
+
+</warsztat>
