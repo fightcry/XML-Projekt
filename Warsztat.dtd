@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!ENTITY ugstd "absolutny brak uwag"> 
+<!ENTITY nazwa_encji "wartość_encji"> 
+
+<!ELEMENT warsztat (pracownik+, klient*, samochod*, naprawaElementu*, naprawaSamochodu*, faktura*)>
+
+<!ELEMENT pracownik (imie, nazwisko, adres+, PESEL, wynagrodzenie, stanowisko+)>
+  <!ATTLIST pracownik plec (m|k|b) #IMPLIED>
+  <!ATTLIST pracownik id ID #REQUIRED>
+<!ELEMENT imie (#PCDATA)>
+<!ELEMENT nazwisko (#PCDATA)>
+<!ELEMENT adres (miejscowosc, ulica, kodPocztowy)>
+  <!ELEMENT miejscowosc (#PCDATA)>
+  <!ELEMENT ulica (#PCDATA)>
+    <!ATTLIST ulica nr CDATA 'brak'>
+  <!ELEMENT kodPocztowy (#PCDATA)>
+<!ELEMENT PESEL (#PCDATA)>
+<!ELEMENT wynagrodzenie (#PCDATA)>
+  <!ATTLIST wynagrodzenie waluta CDATA #FIXED 'zl'> 
+<!ELEMENT stanowisko (#PCDATA)>
+
+<!ELEMENT klient (imie, nazwisko, PESEL, NIP?, adres, zgodaRODO?)>
+  <!ATTLIST klient id ID #REQUIRED>
+<!ELEMENT NIP (#PCDATA)>
+<!ELEMENT zgodaRODO EMPTY>
+
+<!ELEMENT samochod (marka, model, rokProdukcji, VIN?, oznaczenieSilnika?)>
+  <!ATTLIST samochod id ID #REQUIRED>
+  <!ATTLIST samochod idKlient IDREF #REQUIRED>
+<!ELEMENT marka (#PCDATA)>
+<!ELEMENT model (#PCDATA)>
+<!ELEMENT rokProdukcji (#PCDATA)>
+<!ELEMENT VIN (#PCDATA)>
+<!ELEMENT oznaczenieSilnika (#PCDATA)>
+  <!ATTLIST oznaczenieSilnika moc CDATA #IMPLIED>
+
+<!ELEMENT naprawaElementu (nazwaElementu, iloscGodzin, cenaNetto)>
+  <!ATTLIST naprawaElementu idPracownik IDREF #REQUIRED>
+  <!ATTLIST naprawaElementu idNaprawaSamochodu IDREF #REQUIRED>
+<!ELEMENT nazwaElementu (#PCDATA)>
+<!ELEMENT iloscGodzin (#PCDATA)>
+<!ELEMENT cenaNetto (#PCDATA)>
+  <!ATTLIST cenaNetto stawkaVat CDATA '0.23'> 
+  <!ATTLIST cenaNetto waluta CDATA #FIXED 'zl'>
+
+<!ELEMENT naprawaSamochodu (cenaNettoRazem, uwagi)>
+  <!ATTLIST naprawaSamochodu id ID #REQUIRED>
+  <!ATTLIST naprawaSamochodu idSamochod IDREF #REQUIRED>
+<!ELEMENT cenaNettoRazem (#PCDATA)>
+<!ELEMENT uwagi (#PCDATA | pracownik | klient)*>
+  <!ATTLIST uwagi ids IDREFS #IMPLIED>
+
+<!ELEMENT faktura (data, godzina)>
+  <!ATTLIST faktura id ID #REQUIRED>
+  <!ATTLIST faktura idNaprawaSamochodu IDREF #REQUIRED>
+  <!ATTLIST faktura idPracownik IDREF #REQUIRED>
+<!ELEMENT data (#PCDATA)>
+<!ELEMENT godzina (#PCDATA)>
+
+<![IGNORE[ fragment_DTD ]]> 

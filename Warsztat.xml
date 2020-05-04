@@ -1,7 +1,12 @@
-<?xml version='1.0' encoding='ISO-8859-2'?>
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE warsztat SYSTEM "Warsztat.dtd"> 
+<!ENTITY ugstd "absolutny brak uwag"> 
+<!ENTITY nazwa_encji "wartość_encji"> 
+
 <warsztat>
   
-  <pracownik plec='m' id='1'>
+  <pracownik plec='m' id='a1'>
     <imie>Stanisław</imie>
     <nazwisko>Złotopolski</nazwisko>
     <adres>
@@ -13,7 +18,7 @@
     <wynagrodzenie waluta='zl'>4000</wynagrodzenie>
     <stanowisko>główny mechanik</stanowisko>
   </pracownik>
-  <pracownik plec='m' id='2'>
+  <pracownik plec='m' id='a2'>
     <imie>Jan</imie>
     <nazwisko>Kowalski</nazwisko>
     <adres>
@@ -22,10 +27,10 @@
       <kodPocztowy>43100</kodPocztowy>
     </adres>    
     <PESEL>80103135362</PESEL>
-    <wynagrodzenie walute='zl'>3000</wynagrodzenie>
+    <wynagrodzenie waluta='zl'>3000</wynagrodzenie>
     <stanowisko>pomocnik mechanika</stanowisko>
   </pracownik>
-  <pracownik plec='k' id='3'>
+  <pracownik plec='k' id='a3'>
     <imie>Julita</imie>
     <nazwisko>Adamczyk</nazwisko>
     <adres>
@@ -38,7 +43,7 @@
     <stanowisko>recepcjonistka</stanowisko>
   </pracownik>
 
-  <klient id='1'>
+  <klient id='b1'>
     <imie>Zygmunt</imie>
     <nazwisko>Łąka</nazwisko>
     <PESEL>64101003298</PESEL>
@@ -49,7 +54,7 @@
       <kodPocztowy>50033</kodPocztowy>
     </adres>
   </klient>
-  <klient id='2'>
+  <klient id='b2'>
     <imie>Ryszard</imie>
     <nazwisko>Olechowski</nazwisko>
     <PESEL>74052855628</PESEL>
@@ -60,7 +65,7 @@
       <kodPocztowy>59555</kodPocztowy>
     </adres>
   </klient>
-  <klient id='3'>
+  <klient id='b3'>
     <imie>Janusz</imie>
     <nazwisko>Grand</nazwisko>
     <PESEL>54092014595</PESEL>
@@ -70,90 +75,74 @@
       <ulica>Żelazna 55</ulica>
       <kodPocztowy>39652</kodPocztowy>
     </adres>
+    <zgodaRODO/>
   </klient>
 
-  <samochod>
+  <samochod id='c1' idKlient='b1'>
     <marka>Hyundai</marka>
-    <model>Coupe<model>
+    <model>Coupe</model>
     <rokProdukcji>2003</rokProdukcji>
     <VIN>KMHHN61BP2U038549</VIN>
     <oznaczenieSilnika moc='123kW'>G6BA</oznaczenieSilnika>
-    <idKlient>1</idKlient>
   </samochod>
-  <samochod>
+  <samochod id='c2' idKlient='b2'>
     <marka>Toyota</marka>
-    <model>MR2 SW20<model>
+    <model>MR2 SW20</model>
     <rokProdukcji>1993</rokProdukcji>
     <VIN>JT2SW22N0P0064876</VIN>
     <oznaczenieSilnika moc='165kW'>3S-GTE</oznaczenieSilnika>
-    <idKlient>3</idKlient>
   </samochod>
-  <samochod>
+  <samochod id='c3' idKlient='b3'>
     <marka>Subaru</marka>
-    <model>Impreza WRX STI RA<model>
+    <model>Impreza WRX STI RA</model>
     <rokProdukcji>1995</rokProdukcji>
     <VIN>GC8A47D</VIN>
     <oznaczenieSilnika moc='209kW'>EJ20K</oznaczenieSilnika>
-    <idKlient>2</idKlient>
   </samochod>
 
-  <naprawaElementu>
+  <naprawaElementu idPracownik='a1' idNaprawaSamochodu='d1'>
     <nazwaElementu>Drzwi lewe</nazwaElementu>
     <iloscGodzin>2</iloscGodzin>
     <cenaNetto stawkaVat='0.23' waluta='zl'>600</cenaNetto>
-    <idPracownik>1</idPracownik>
-    <idNaprawaSamochodu>1</idNaprawaSamochodu>
   </naprawaElementu>
-  <naprawaElementu>
+  <naprawaElementu idPracownik='a2' idNaprawaSamochodu='d1'>
     <nazwaElementu>Drzwi prawe</nazwaElementu>
     <iloscGodzin>2</iloscGodzin>
     <cenaNetto stawkaVat='0.23' waluta='zl'>600</cenaNetto>
-    <idPracownik>2</idPracownik>
-    <idNaprawaSamochodu>1</idNaprawaSamochodu>
   </naprawaElementu>
-  <naprawaElementu>
+  <naprawaElementu idPracownik='a1' idNaprawaSamochodu='d2'>
     <nazwaElementu>wymiana świec zapłonowych</nazwaElementu>
     <iloscGodzin>4</iloscGodzin>
     <cenaNetto stawkaVat='0.23'>1200</cenaNetto>
-    <idPracownik>1</idPracownik>
-    <idNaprawaSamochodu>2</idNaprawaSamochodu>
   </naprawaElementu>
-  <naprawaElementu>
+  <naprawaElementu idPracownik='a2' idNaprawaSamochodu='d3'>
     <nazwaElementu>wymiana oleju</nazwaElementu>
     <iloscGodzin>1</iloscGodzin>
     <cenaNetto stawkaVat='0.23' waluta='zl'>200</cenaNetto>
-    <idPracownik>2</idPracownik>
-    <idNaprawaSamochodu>3</idNaprawaSamochodu>
   </naprawaElementu>
 
-  <naprawaSamochodu id='1'>
+  <naprawaSamochodu id='d1' idSamochod='c1'>
     <cenaNettoRazem>1200</cenaNettoRazem>
-    <idSamochod>1</idSamochod>
+    <uwagi>&ugstd;</uwagi>
   </naprawaSamochodu>
-  <naprawaSamochodu id='2'>
+  <naprawaSamochodu id='d2' idSamochod='c3'>
     <cenaNettoRazem>1200</cenaNettoRazem>
-    <idSamochod>3</idSamochod>
+    <uwagi>&ugstd;</uwagi>
   </naprawaSamochodu>
-  <naprawaSamochodu id='3'>
+  <naprawaSamochodu id='d3' idSamochod='c3'>
     <cenaNettoRazem>200</cenaNettoRazem>
-    <idSamochod>3</idSamochod>
+    <uwagi>&ugstd;</uwagi>
   </naprawaSamochodu>
 
-  <faktura id='1'>
-    <idNaprawaSamochodu>1</idNaprawaSamochodu>
-    <idPracownik>3</idPracownik>
+  <faktura id='e1' idNaprawaSamochodu='d1' idPracownik='a3'>
     <data>220220</data>
     <godzina>1205</godzina>
   </faktura>
-  <faktura id='2'>
-    <idNaprawaSamochodu>2</idNaprawaSamochodu>
-    <idPracownik>3</idPracownik>
+  <faktura id='e2' idNaprawaSamochodu='d2' idPracownik='a3'>
     <data>250220</data>
     <godzina>1410</godzina>
   </faktura>
-  <faktura id='3'>
-    <idNaprawaSamochodu>3</idNaprawaSamochodu>
-    <idPracownik>3</idPracownik>
+  <faktura id='e3' idNaprawaSamochodu='d3' idPracownik='a3'>
     <data>040320</data>
     <godzina>900</godzina>
   </faktura>
