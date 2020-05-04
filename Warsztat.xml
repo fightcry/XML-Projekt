@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE warsztat SYSTEM "Warsztat.dtd"> 
-<!ENTITY ugstd "absolutny brak uwag"> 
-<!ENTITY nazwa_encji "wartość_encji"> 
 
 <warsztat>
   
@@ -11,7 +9,7 @@
     <nazwisko>Złotopolski</nazwisko>
     <adres>
       <miejscowosc>Warszawa</miejscowosc>
-      <ulica>Mostowa 15</ulica>
+      <ulica nr='15'>Mostowa</ulica>
       <kodPocztowy>00010</kodPocztowy>
     </adres>    
     <PESEL>58022102246</PESEL>
@@ -23,7 +21,7 @@
     <nazwisko>Kowalski</nazwisko>
     <adres>
       <miejscowosc>Tychy</miejscowosc>
-      <ulica>Lipowa 14</ulica>
+      <ulica nr='14'>Lipowa</ulica>
       <kodPocztowy>43100</kodPocztowy>
     </adres>    
     <PESEL>80103135362</PESEL>
@@ -35,7 +33,7 @@
     <nazwisko>Adamczyk</nazwisko>
     <adres>
       <miejscowosc>Kielce</miejscowosc>
-      <ulica>Wałowa 16</ulica>
+      <ulica nr='16'>Wałowa</ulica>
       <kodPocztowy>25444</kodPocztowy>
     </adres>
     <PESEL>90081238917</PESEL>
@@ -50,7 +48,7 @@
     <NIP>5252574499</NIP>
     <adres>
       <miejscowosc>Wrocław</miejscowosc>
-      <ulica>Legii 6</ulica>
+      <ulica>Legii</ulica>
       <kodPocztowy>50033</kodPocztowy>
     </adres>
   </klient>
@@ -58,10 +56,10 @@
     <imie>Ryszard</imie>
     <nazwisko>Olechowski</nazwisko>
     <PESEL>74052855628</PESEL>
-    <NIP></NIP>
+    <NIP>&bd;</NIP>
     <adres>
       <miejscowosc>Kraków</miejscowosc>
-      <ulica>Wojska Polskiego 322</ulica>
+      <ulica nr='322'>Wojska Polskiego</ulica>
       <kodPocztowy>59555</kodPocztowy>
     </adres>
   </klient>
@@ -72,7 +70,7 @@
     <NIP>3757722506</NIP>
     <adres>
       <miejscowosc>Warszawa</miejscowosc>
-      <ulica>Żelazna 55</ulica>
+      <ulica nr='55'>Żelazna</ulica>
       <kodPocztowy>39652</kodPocztowy>
     </adres>
     <zgodaRODO/>
