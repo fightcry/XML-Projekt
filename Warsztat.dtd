@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!ENTITY ugstd "absolutny brak uwag"> 
-<!ENTITY nazwa_encji "wartość_encji"> 
+<!ENTITY bd "brak danych"> 
 
 <!ELEMENT warsztat (pracownik+, klient*, samochod*, naprawaElementu*, naprawaSamochodu*, faktura*)>
 
@@ -58,4 +58,10 @@
 <!ELEMENT data (#PCDATA)>
 <!ELEMENT godzina (#PCDATA)>
 
-<![IGNORE[ fragment_DTD ]]> 
+<![IGNORE[
+  <!ELEMENT paragon (data, godzina)>
+    <!ATTLIST paragon id ID #REQUIRED>
+    <!ATTLIST paragon idNaprawaSamochodu IDREF #REQUIRED>
+    <!ATTLIST paragon idPracownik IDREF #REQUIRED>
+  <!ELEMENT data (#PCDATA)>
+  <!ELEMENT godzina (#PCDATA)>]]> 
