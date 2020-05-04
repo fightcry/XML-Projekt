@@ -1,36 +1,161 @@
 <?xml version='1.0' encoding='ISO-8859-2'?>
 <warsztat>
+  
   <pracownik plec='m' id='1'>
     <imie>Stanisław</imie>
     <nazwisko>Złotopolski</nazwisko>
+    <adres>
+      <miejscowosc>Warszawa</miejscowosc>
+      <ulica>Mostowa 15</ulica>
+      <kodPocztowy>00010</kodPocztowy>
+    </adres>    
     <PESEL>58022102246</PESEL>
     <wynagrodzenie waluta='zl'>4000</wynagrodzenie>
     <stanowisko>główny mechanik</stanowisko>
   </pracownik>
   <pracownik plec='m' id='2'>
-    <imie> </imie>
-    <nazwisko></nazwisko>
-    <PESEL></PESEL>
-    <wynagrodzenie></wynagrodzenie>
-    <stanowisko></stanowisko>
+    <imie>Jan</imie>
+    <nazwisko>Kowalski</nazwisko>
+    <adres>
+      <miejscowosc>Tychy</miejscowosc>
+      <ulica>Lipowa 14</ulica>
+      <kodPocztowy>43100</kodPocztowy>
+    </adres>    
+    <PESEL>80103135362</PESEL>
+    <wynagrodzenie walute='zl'>3000</wynagrodzenie>
+    <stanowisko>pomocnik mechanika</stanowisko>
   </pracownik>
   <pracownik plec='k' id='3'>
-    <imie> </imie>
-    <nazwisko></nazwisko>
-    <PESEL></PESEL>
-    <wynagrodzenie></wynagrodzenie>
-    <stanowisko></stanowisko>
+    <imie>Julita</imie>
+    <nazwisko>Adamczyk</nazwisko>
+    <adres>
+      <miejscowosc>Kielce</miejscowosc>
+      <ulica>Wałowa 16</ulica>
+      <kodPocztowy>25444</kodPocztowy>
+    </adres>
+    <PESEL>90081238917</PESEL>
+    <wynagrodzenie waluta='zl'>2800</wynagrodzenie>
+    <stanowisko>recepcjonistka</stanowisko>
   </pracownik>
-<samochod>
 
+  <klient id='1'>
+    <imie>Zygmunt</imie>
+    <nazwisko>Łąka</nazwisko>
+    <PESEL>64101003298</PESEL>
+    <NIP>5252574499</NIP>
+    <adres>
+      <miejscowosc>Wrocław</miejscowosc>
+      <ulica>Legii 6</ulica>
+      <kodPocztowy>50033</kodPocztowy>
+    </adres>
+  </klient>
+  <klient id='2'>
+    <imie>Ryszard</imie>
+    <nazwisko>Olechowski</nazwisko>
+    <PESEL>74052855628</PESEL>
+    <NIP></NIP>
+    <adres>
+      <miejscowosc>Kraków</miejscowosc>
+      <ulica>Wojska Polskiego 322</ulica>
+      <kodPocztowy>59555</kodPocztowy>
+    </adres>
+  </klient>
+  <klient id='3'>
+    <imie>Janusz</imie>
+    <nazwisko>Grand</nazwisko>
+    <PESEL>54092014595</PESEL>
+    <NIP>3757722506</NIP>
+    <adres>
+      <miejscowosc>Warszawa</miejscowosc>
+      <ulica>Żelazna 55</ulica>
+      <kodPocztowy>39652</kodPocztowy>
+    </adres>
+  </klient>
 
+  <samochod>
+    <marka>Hyundai</marka>
+    <model>Coupe<model>
+    <rokProdukcji>2003</rokProdukcji>
+    <VIN>KMHHN61BP2U038549</VIN>
+    <oznaczenieSilnika moc='123kW'>G6BA</oznaczenieSilnika>
+    <idKlient>1</idKlient>
+  </samochod>
+  <samochod>
+    <marka>Toyota</marka>
+    <model>MR2 SW20<model>
+    <rokProdukcji>1993</rokProdukcji>
+    <VIN>JT2SW22N0P0064876</VIN>
+    <oznaczenieSilnika moc='165kW'>3S-GTE</oznaczenieSilnika>
+    <idKlient>3</idKlient>
+  </samochod>
+  <samochod>
+    <marka>Subaru</marka>
+    <model>Impreza WRX STI RA<model>
+    <rokProdukcji>1995</rokProdukcji>
+    <VIN>GC8A47D</VIN>
+    <oznaczenieSilnika moc='209kW'>EJ20K</oznaczenieSilnika>
+    <idKlient>2</idKlient>
+  </samochod>
 
+  <naprawaElementu>
+    <nazwaElementu>Drzwi lewe</nazwaElementu>
+    <iloscGodzin>2</iloscGodzin>
+    <cenaNetto stawkaVat='0.23' waluta='zl'>600</cenaNetto>
+    <idPracownik>1</idPracownik>
+    <idNaprawaSamochodu>1</idNaprawaSamochodu>
+  </naprawaElementu>
+  <naprawaElementu>
+    <nazwaElementu>Drzwi prawe</nazwaElementu>
+    <iloscGodzin>2</iloscGodzin>
+    <cenaNetto stawkaVat='0.23' waluta='zl'>600</cenaNetto>
+    <idPracownik>2</idPracownik>
+    <idNaprawaSamochodu>1</idNaprawaSamochodu>
+  </naprawaElementu>
+  <naprawaElementu>
+    <nazwaElementu>wymiana świec zapłonowych</nazwaElementu>
+    <iloscGodzin>4</iloscGodzin>
+    <cenaNetto stawkaVat='0.23'>1200</cenaNetto>
+    <idPracownik>1</idPracownik>
+    <idNaprawaSamochodu>2</idNaprawaSamochodu>
+  </naprawaElementu>
+  <naprawaElementu>
+    <nazwaElementu>wymiana oleju</nazwaElementu>
+    <iloscGodzin>1</iloscGodzin>
+    <cenaNetto stawkaVat='0.23' waluta='zl'>200</cenaNetto>
+    <idPracownik>2</idPracownik>
+    <idNaprawaSamochodu>3</idNaprawaSamochodu>
+  </naprawaElementu>
 
+  <naprawaSamochodu id='1'>
+    <cenaNettoRazem>1200</cenaNettoRazem>
+    <idSamochod>1</idSamochod>
+  </naprawaSamochodu>
+  <naprawaSamochodu id='2'>
+    <cenaNettoRazem>1200</cenaNettoRazem>
+    <idSamochod>3</idSamochod>
+  </naprawaSamochodu>
+  <naprawaSamochodu id='3'>
+    <cenaNettoRazem>200</cenaNettoRazem>
+    <idSamochod>3</idSamochod>
+  </naprawaSamochodu>
 
-
-
-
-
-
+  <faktura id='1'>
+    <idNaprawaSamochodu>1</idNaprawaSamochodu>
+    <idPracownik>3</idPracownik>
+    <data>220220</data>
+    <godzina>1205</godzina>
+  </faktura>
+  <faktura id='2'>
+    <idNaprawaSamochodu>2</idNaprawaSamochodu>
+    <idPracownik>3</idPracownik>
+    <data>250220</data>
+    <godzina>1410</godzina>
+  </faktura>
+  <faktura id='3'>
+    <idNaprawaSamochodu>3</idNaprawaSamochodu>
+    <idPracownik>3</idPracownik>
+    <data>040320</data>
+    <godzina>900</godzina>
+  </faktura>
 
 </warsztat>
