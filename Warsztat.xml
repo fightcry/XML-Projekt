@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="US-ASCII" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 
 <!DOCTYPE warsztat SYSTEM "Warsztat.dtd"> 
 <?xml-stylesheet type="text/css" href="Warsztat.css" ?> 
@@ -6,8 +6,8 @@
 <warsztat>
   
   <pracownik plec='m' id='a1'>
-    <imie>Stanisław</imie>
-    <nazwisko>Złotopolski</nazwisko>
+    <imie>Stanislaw</imie>
+    <nazwisko>Zlotopolski</nazwisko>
     <adres>
       <miejscowosc>Warszawa</miejscowosc>
       <ulica nr='15'>Mostowa</ulica>
@@ -15,7 +15,7 @@
     </adres>    
     <PESEL>58022102246</PESEL>
     <wynagrodzenie waluta='zl'>4000</wynagrodzenie>
-    <stanowisko>główny mechanik</stanowisko>
+    <stanowisko>glowny mechanik</stanowisko>
   </pracownik>
   <pracownik plec='m' id='a2'>
     <imie>Jan</imie>
@@ -34,7 +34,7 @@
     <nazwisko>Adamczyk</nazwisko>
     <adres>
       <miejscowosc>Kielce</miejscowosc>
-      <ulica nr='16'>Wałowa</ulica>
+      <ulica nr='16'>Walowa</ulica>
       <kodPocztowy>25444</kodPocztowy>
     </adres>
     <PESEL>90081238917</PESEL>
@@ -44,11 +44,11 @@
 
   <klient id='b1'>
     <imie>Zygmunt</imie>
-    <nazwisko>Łąka</nazwisko>
+    <nazwisko>Laka</nazwisko>
     <PESEL>64101003298</PESEL>
     <NIP>5252574499</NIP>
     <adres>
-      <miejscowosc>Wrocław</miejscowosc>
+      <miejscowosc>Wroclaw</miejscowosc>
       <ulica>Legii</ulica>
       <kodPocztowy>50033</kodPocztowy>
     </adres>
@@ -57,9 +57,9 @@
     <imie>Ryszard</imie>
     <nazwisko>Olechowski</nazwisko>
     <PESEL>74052855628</PESEL>
-    <NIP>&bd;</NIP>
+    <NIP></NIP>
     <adres>
-      <miejscowosc>Kraków</miejscowosc>
+      <miejscowosc>Krakow</miejscowosc>
       <ulica nr='322'>Wojska Polskiego</ulica>
       <kodPocztowy>59555</kodPocztowy>
     </adres>
@@ -71,7 +71,7 @@
     <NIP>3757722506</NIP>
     <adres>
       <miejscowosc>Warszawa</miejscowosc>
-      <ulica nr='55'>Żelazna</ulica>
+      <ulica nr='55'>Zelazna</ulica>
       <kodPocztowy>39652</kodPocztowy>
     </adres>
     <zgodaRODO/>
@@ -110,7 +110,7 @@
     <cenaNetto stawkaVat='0.23' waluta='zl'>600</cenaNetto>
   </naprawaElementu>
   <naprawaElementu idPracownik='a1' idNaprawaSamochodu='d2'>
-    <nazwaElementu>wymiana świec zapłonowych</nazwaElementu>
+    <nazwaElementu>wymiana swiec zaplonowych</nazwaElementu>
     <iloscGodzin>4</iloscGodzin>
     <cenaNetto stawkaVat='0.23'>1200</cenaNetto>
   </naprawaElementu>
@@ -122,15 +122,15 @@
 
   <naprawaSamochodu id='d1' idSamochod='c1'>
     <cenaNettoRazem>1200</cenaNettoRazem>
-    <uwagi>&ugstd;</uwagi>
+    <uwagi></uwagi>
   </naprawaSamochodu>
   <naprawaSamochodu id='d2' idSamochod='c3'>
     <cenaNettoRazem>1200</cenaNettoRazem>
-    <uwagi>&ugstd;</uwagi>
+    <uwagi></uwagi>
   </naprawaSamochodu>
   <naprawaSamochodu id='d3' idSamochod='c3'>
     <cenaNettoRazem>200</cenaNettoRazem>
-    <uwagi>&ugstd;</uwagi>
+    <uwagi></uwagi>
   </naprawaSamochodu>
 
   <faktura id='e1' idNaprawaSamochodu='d1' idPracownik='a3'>
