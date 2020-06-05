@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="warsztat">
+<xsd:complexType>
+	<xsd:all>
+		<xsd:element name="pracownik" type="typpracownik"/>
+		<xsd:element name="klient" type="typklient"/>
+		<xsd:element name="samochod" type="typsamochod"/>
+		<xsd:element name="naprawaElementu" type="typnaprawa"/>
+		<xsd:element name="naprawaSamochodu" type="typnaprawas"/>
+		<xsd:element name="faktura" type="typfaktura"/>
+	</xsd:all>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:complexType name="typpracownik">
+	<xsd:sequence>
+		<xsd:element name="imie" type="xsd:string"/>
+		<xsd:element name="nazwisko" type="xsd:string"/>
+		<xsd:element name="PESEL" type="xsd:string"/>
+		<xsd:element name="adres">
+			<xsd:complexType>
+				<xsd:all>
+					<xsd:element name="miejscowosc" type="xsd:string"/>
+					<xsd:element name="ulica" type="xsd:string"/>
+					<xsd:element name="kodPocztowy" type="xsd:string"/>
+				</xsd:all>
+				<xsd:attribute name="nr" type="xsd:positiveInteger"/>
+			</xsd:complexType>
+		</xsd:element>
+		<xsd:element name="wynagrodzenie">
+			<xsd:complexType>
+				<xsd:simpleContent>
+					<xsd:extension base="xsd:string">
+						<xsd:attribute name="waluta" type="xsd:string" fixed="zl"/>
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+		</xsd:element>
+		<xsd:element name="stanowisko" type="xsd:string"/>
+	</xsd:sequence>
+	<xsd:attribute name="plec" type="xsd:string" fixed="zl"/>
+	<xsd:attribute name="id" type="xsd:ID"/>	
+</xsd:complexType>
+
+<xsd:complexType name="typklient">
+	<xsd:choice>
+		<xsd:element name="imie" type="xsd:string"/>
+		<xsd:element name="nazwisko" type="xsd:string"/>
+		<xsd:element name="PESEL" type="xsd:string"/>
+		<xsd:element name="NIP" type="xsd:string"/>
+		<xsd:element name="adres">
+			<xsd:complexType>
+				<xsd:all>
+					<xsd:element name="miejscowosc" type="xsd:string"/>
+					<xsd:element name="ulica" type="xsd:string"/>
+					<xsd:element name="kodPocztowy" type="xsd:string"/>
+				</xsd:all>
+				<xsd:attribute name="nr" type="xsd:positiveInteger"/>
+			</xsd:complexType>
+		</xsd:element>
+		<xsd:element name="wynagrodzenie">
+			<xsd:complexType>
+				<xsd:simpleContent>
+					<xsd:extension base="xsd:string">
+						<xsd:attribute name="waluta" type="xsd:string" fixed="zl"/>
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+		</xsd:element>
+		<xsd:element name="zgodaRODO" minOccurs="0">
+			<xsd:simpleType>
+				<xsd:restriction base='xsd:string'>
+					<xsd:length value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+	</xsd:choice>
+	<xsd:attribute name="id" type="xsd:ID"/>
+</xsd:complexType>
+
+<xsd:complexType name="typsamochod">
+	<xsd:sequence>
+		<xsd:element name="marka" type="xsd:string"/>
+		<xsd:element name="model" type="xsd:string"/>
+		<xsd:element name="rokProdukcji">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="1900"/>
+					<xsd:maxInclusive value="2100"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="VIN" type="xsd:string"/>
+		<xsd:element name="oznaczenieSilnika">
+			<xsd:complexType>
+				<xsd:simpleContent>
+					<xsd:extension base="xsd:string">
+						<xsd:attribute name="moc" type="xsd:string"/>
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+	<xsd:attribute name="id" type="xsd:ID"/>
+	<xsd:attribute name="idKlient" type="xsd:IDREF"/>
+</xsd:complexType>
+
+<xsd:complexType name="typnaprawa">
+	<xsd:all>
+		<xsd:element name="nazwaElementu" type="xsd:string"/>
+		<xsd:element name="iloscGodzin" type="xsd:integer"/>
+		<xsd:element name="cenaNetto">
+			<xsd:complexType>
+				<xsd:simpleContent>
+					<xsd:extension base="xsd:decimal">
+						<xsd:attribute name="stawkaVat" type="xsd:decimal"/>
+						<xsd:attribute name="waluta" type="xsd:string" fixed="zl"/>
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:all>
+	<xsd:attribute name="idPracownik" type="xsd:IDREF"/>
+	<xsd:attribute name="idNaprawaSamochodu" type="xsd:IDREF"/>
+</xsd:complexType>
+
+<xsd:complexType name="typnaprawas">
+	<xsd:all>
+		<xsd:element name="cenaNettoRazem" type="xsd:decimal"/>
+		<xsd:element name="uwagi" type="xsd:string"/>
+	</xsd:all>
+	<xsd:attribute name="idPracownik" type="xsd:IDREF"/>
+	<xsd:attribute name="id" type="xsd:ID"/>
+</xsd:complexType>
+
+<xsd:complexType name="typfaktura">
+	<xsd:all>
+		<xsd:element name="data" type="xsd:integer"/>
+		<xsd:element name="godzina" type="xsd:integer"/>
+	</xsd:all>
+</xsd:complexType>
+<xsd:attribute name="idPracownik" type="xsd:IDREF"/>
+<xsd:attribute name="idNaprawaSamochodu" type="xsd:IDREF"/>
+<xsd:attribute name="id" type="xsd:ID"/>
+</xsd:schema>
