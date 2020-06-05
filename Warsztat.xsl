@@ -1,8 +1,11 @@
+<?xml version="1.0" encoding='UTF-8' ?>
+
 <xsl:stylesheet version="1.0"
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:output method="xml" omit-xml-declaration="yes"/>
 
 <xsl:template match="/">
-<xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
+  <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
   <title>Witamy w warsztacie</title> 
   <body style="background-color: lightblue; font-family: verdana; font-size: 20px; margin: auto;"> 
   <h2>Warsztat samochodowy</h2>
@@ -46,7 +49,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       <td style="text-align:center"><xsl:value-of select="imie"/></td>
       <td style="text-align:center"><xsl:value-of select="nazwisko"/></td>
       <td style="text-align:center"><xsl:value-of select="PESEL"/></td>
-      <td style="text-align:center"><xsl:value-of select="NIP"/></td>
+      <td style="text-align:center"> <xsl:value-of select="NIP"/> <br/> </td>
       <td style="text-align:center"><xsl:value-of select="adres/miejscowosc"/></td>
       <td style="text-align:center"><xsl:value-of select="adres/ulica"/><![CDATA[   ]]><xsl:value-of select="adres/ulica/@nr"/></td>
       <td style="text-align:center"><xsl:value-of select="adres/kodPocztowy"/></td>
