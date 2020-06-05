@@ -3,30 +3,43 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <xsd:element name="warsztat">
 <xsd:complexType>
-	<xsd:all>
-		<xsd:element name="pracownik" type="typpracownik"/>
-		<xsd:element name="klient" type="typklient"/>
-		<xsd:element name="samochod" type="typsamochod"/>
-		<xsd:element name="naprawaElementu" type="typnaprawa"/>
-		<xsd:element name="naprawaSamochodu" type="typnaprawas"/>
-		<xsd:element name="faktura" type="typfaktura"/>
-	</xsd:all>
+	<xsd:choice maxOccurs="unbounded">
+		<xsd:element name="pracownik" type="typpracownik" maxOccurs="unbounded"/>
+		<xsd:element name="klient" type="typklient" maxOccurs="unbounded"/>
+		<xsd:element name="samochod" type="typsamochod" maxOccurs="unbounded"/>
+		<xsd:element name="naprawaElementu" type="typnaprawa" maxOccurs="unbounded"/>
+		<xsd:element name="naprawaSamochodu" type="typnaprawas" maxOccurs="unbounded"/>
+		<xsd:element name="faktura" type="typfaktura" maxOccurs="unbounded"/>
+	</xsd:choice>
 </xsd:complexType>
 </xsd:element>
 
 <xsd:complexType name="typpracownik">
-	<xsd:sequence>
+	<xsd:all>
 		<xsd:element name="imie" type="xsd:string"/>
 		<xsd:element name="nazwisko" type="xsd:string"/>
-		<xsd:element name="PESEL" type="xsd:string"/>
+		<xsd:element name="PESEL">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="11"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
 		<xsd:element name="adres">
 			<xsd:complexType>
 				<xsd:all>
 					<xsd:element name="miejscowosc" type="xsd:string"/>
-					<xsd:element name="ulica" type="xsd:string"/>
+					<xsd:element name="ulica">
+						<xsd:complexType>
+							<xsd:simpleContent>
+								<xsd:extension base="xsd:string">
+									<xsd:attribute name="nr" type="xsd:string"/>
+								</xsd:extension>
+							</xsd:simpleContent>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="kodPocztowy" type="xsd:string"/>
 				</xsd:all>
-				<xsd:attribute name="nr" type="xsd:positiveInteger"/>
 			</xsd:complexType>
 		</xsd:element>
 		<xsd:element name="wynagrodzenie">
@@ -39,28 +52,35 @@
 			</xsd:complexType>
 		</xsd:element>
 		<xsd:element name="stanowisko" type="xsd:string"/>
-	</xsd:sequence>
-	<xsd:attribute name="plec" type="xsd:string" fixed="zl"/>
+	</xsd:all>
+	<xsd:attribute name="plec" type="xsd:string"/>
 	<xsd:attribute name="id" type="xsd:ID"/>	
 </xsd:complexType>
 
 <xsd:complexType name="typklient">
-	<xsd:choice>
-		<xsd:element name="imie" type="xsd:string"/>
-		<xsd:element name="nazwisko" type="xsd:string"/>
-		<xsd:element name="PESEL" type="xsd:string"/>
-		<xsd:element name="NIP" type="xsd:string"/>
-		<xsd:element name="adres">
+	<xsd:choice maxOccurs="unbounded">
+		<xsd:element name="imie" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="nazwisko" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="PESEL" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="NIP" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="adres" minOccurs="1" maxOccurs="1">
 			<xsd:complexType>
 				<xsd:all>
 					<xsd:element name="miejscowosc" type="xsd:string"/>
-					<xsd:element name="ulica" type="xsd:string"/>
+					<xsd:element name="ulica">
+						<xsd:complexType>
+							<xsd:simpleContent>
+								<xsd:extension base="xsd:string">
+									<xsd:attribute name="nr" type="xsd:string"/>
+								</xsd:extension>
+							</xsd:simpleContent>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="kodPocztowy" type="xsd:string"/>
 				</xsd:all>
-				<xsd:attribute name="nr" type="xsd:positiveInteger"/>
 			</xsd:complexType>
 		</xsd:element>
-		<xsd:element name="wynagrodzenie">
+		<xsd:element name="wynagrodzenie" minOccurs="1" maxOccurs="1">
 			<xsd:complexType>
 				<xsd:simpleContent>
 					<xsd:extension base="xsd:string">
@@ -133,15 +153,30 @@
 	</xsd:all>
 	<xsd:attribute name="idPracownik" type="xsd:IDREF"/>
 	<xsd:attribute name="id" type="xsd:ID"/>
+	<xsd:attribute name="idSamochod" type="xsd:IDREF"/>
 </xsd:complexType>
 
 <xsd:complexType name="typfaktura">
 	<xsd:all>
-		<xsd:element name="data" type="xsd:integer"/>
-		<xsd:element name="godzina" type="xsd:integer"/>
+		<xsd:element name="data">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="6"></xsd:length>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="godzina">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="3"></xsd:minLength>
+				<xsd:maxLength value="4"></xsd:maxLength>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
 	</xsd:all>
+	<xsd:attribute name="idPracownik" type="xsd:IDREF"/>
+	<xsd:attribute name="idNaprawaSamochodu" type="xsd:IDREF"/>
+	<xsd:attribute name="id" type="xsd:ID"/>
 </xsd:complexType>
-<xsd:attribute name="idPracownik" type="xsd:IDREF"/>
-<xsd:attribute name="idNaprawaSamochodu" type="xsd:IDREF"/>
-<xsd:attribute name="id" type="xsd:ID"/>
+
 </xsd:schema>
