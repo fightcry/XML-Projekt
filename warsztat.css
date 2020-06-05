@@ -71,7 +71,8 @@ samochod{
   padding: 20px;
   display: inline-table;
   width: 500px;
-  font-size:25px;  
+  font-size:25px;
+  font-weight: bold;  
   color: black;
   margin: 20px;
   border-style: solid;
