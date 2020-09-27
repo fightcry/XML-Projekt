@@ -2,8 +2,7 @@
 
 <!DOCTYPE warsztat SYSTEM "Warsztat.dtd"> 
 <?xml-stylesheet type="text/css" href="Warsztat.css" ?> 
-
-<warsztat>
+<warsztat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Warsztat.xsd">
   
   <pracownik plec='m' id='a1'>
     <imie>Stanislaw</imie>

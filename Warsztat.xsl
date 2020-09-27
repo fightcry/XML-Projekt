@@ -6,10 +6,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 <xsl:template match="/">
   <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
+  <xsl:text disable-output-escaping='yes'>&lt;html lang="pl"&gt;</xsl:text>
   <title>Witamy w warsztacie</title> 
   <body style="background-color: lightblue; font-family: verdana; font-size: 20px; margin: auto;"> 
-  <h2>Warsztat samochodowy</h2>
-    <table style="padding: 70px; border: 1px solid black;">
+  <h2 style="text-align: center">Warsztat samochodowy</h2>
+    <table style="padding: 70px; border: 1px solid black; margin: auto;">
     <tr style="background-color: #9acd32;">
       <th>Imię</th>
       <th>Nazwisko</th>
@@ -34,7 +35,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </xsl:for-each>
   </table>
 
-  <table style="padding: 70px; border: 1px solid black;">
+  <table style="padding: 70px; border: 1px solid black; margin: auto;">
     <tr style="background-color: yellow;">
       <th>Imię</th>
       <th>Nazwisko</th>
@@ -57,7 +58,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </xsl:for-each>
   </table>
 
-  <table style="padding: 70px; border: 1px solid black;">
+  <table style="padding: 70px; border: 1px solid black; margin: auto;">
     <tr style="background-color: red;">
       <th>Marka</th>
       <th>Model</th>

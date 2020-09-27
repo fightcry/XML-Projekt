@@ -2,7 +2,8 @@
 <!ENTITY bd "brak danych"> 
 
 <!ELEMENT warsztat (pracownik+, klient*, samochod*, naprawaElementu*, naprawaSamochodu*, faktura*)>
-
+<!ATTLIST warsztat xmlns:xsi CDATA ''>
+<!ATTLIST warsztat xsi:noNamespaceSchemaLocation CDATA ''>
 <!ELEMENT pracownik (imie, nazwisko, adres+, PESEL, wynagrodzenie, stanowisko+)>
   <!ATTLIST pracownik plec (m|k|b) #IMPLIED>
   <!ATTLIST pracownik id ID #REQUIRED>
